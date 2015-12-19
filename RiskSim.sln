@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RiskSimLib", "RiskSimLib\RiskSimLib.csproj", "{7F80DBF9-D922-48F7-9E0F-A58D13074E57}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RiskSimConsoleHost", "RiskSimConsoleHost\RiskSimConsoleHost.csproj", "{4962F520-3D36-4601-83C2-A3A2EF9FB46E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RiskSimConsoleClient", "RiskSimConsoleClient\RiskSimConsoleClient.csproj", "{57F313E6-37BB-494F-A949-F04A887026C5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7F80DBF9-D922-48F7-9E0F-A58D13074E57}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F80DBF9-D922-48F7-9E0F-A58D13074E57}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F80DBF9-D922-48F7-9E0F-A58D13074E57}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F80DBF9-D922-48F7-9E0F-A58D13074E57}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4962F520-3D36-4601-83C2-A3A2EF9FB46E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4962F520-3D36-4601-83C2-A3A2EF9FB46E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4962F520-3D36-4601-83C2-A3A2EF9FB46E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4962F520-3D36-4601-83C2-A3A2EF9FB46E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{57F313E6-37BB-494F-A949-F04A887026C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57F313E6-37BB-494F-A949-F04A887026C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57F313E6-37BB-494F-A949-F04A887026C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57F313E6-37BB-494F-A949-F04A887026C5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
