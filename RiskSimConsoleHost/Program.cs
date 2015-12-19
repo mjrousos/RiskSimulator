@@ -17,8 +17,8 @@ namespace RiskSimConsoleHost
 
             try
             {
-                host.AddServiceEndpoint(typeof(RiskSimLib.IRiskSimulator), new WSHttpBinding(), "Risk");
-                host.AddServiceEndpoint(typeof(RiskSimLib.ICalculator), new WSHttpBinding(), "Calc");
+                host.AddServiceEndpoint(typeof(RiskSimLib.IRiskSimulator), new BasicHttpBinding(), "Risk");
+                // host.AddServiceEndpoint(typeof(RiskSimLib.ICalculator), new WSHttpBinding(), "Calc");
 
                 var smb = new ServiceMetadataBehavior();
                 smb.HttpGetEnabled = true;

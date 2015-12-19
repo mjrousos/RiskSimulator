@@ -26,9 +26,9 @@
   <Metadata>
     <MetadataFile FileName="RiskSimulatorService.wsdl" MetadataType="Wsdl" ID="620d2668-9299-4690-90b0-14666b244264" SourceId="1" SourceUrl="http://localhost:8000/Simulators?wsdl" />
     <MetadataFile FileName="Simulators.xsd" MetadataType="Schema" ID="531ff3a6-db08-4369-a46f-28d330469610" SourceId="1" SourceUrl="http://localhost:8000/Simulators?xsd=xsd0" />
+    <MetadataFile FileName="Simulators3.xsd" MetadataType="Schema" ID="9501bf3a-80af-40d1-92f2-7ecf2af2c3d7" SourceId="1" SourceUrl="http://localhost:8000/Simulators?xsd=xsd3" />
     <MetadataFile FileName="Simulators1.xsd" MetadataType="Schema" ID="94a4f899-46f3-461f-b0ca-69bb3a0b6c3b" SourceId="1" SourceUrl="http://localhost:8000/Simulators?xsd=xsd2" />
     <MetadataFile FileName="Simulators.disco" MetadataType="Disco" ID="191255f2-7493-4d77-9793-616e449bafa5" SourceId="1" SourceUrl="http://localhost:8000/Simulators?disco" />
-    <MetadataFile FileName="Simulators.wsdl" MetadataType="Wsdl" ID="39e84715-44c8-4fed-a5b2-40ba2da0e0fe" SourceId="1" SourceUrl="http://localhost:8000/Simulators?wsdl=wsdl0" />
     <MetadataFile FileName="Simulators2.xsd" MetadataType="Schema" ID="132efb2b-bc09-4f02-9b9a-040cf26cae14" SourceId="1" SourceUrl="http://localhost:8000/Simulators?xsd=xsd1" />
   </Metadata>
   <Extensions>

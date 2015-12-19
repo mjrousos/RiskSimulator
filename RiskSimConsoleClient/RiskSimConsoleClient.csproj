@@ -55,8 +55,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Service References\RiskSimulators\RiskSimConsoleClient.RiskSimulators.AttackResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\RiskSimulators\RiskSimulatorService.wsdl" />
-    <None Include="Service References\RiskSimulators\Simulators.wsdl" />
     <None Include="Service References\RiskSimulators\Simulators.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -64,6 +66,9 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\RiskSimulators\Simulators2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RiskSimulators\Simulators3.xsd">
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>

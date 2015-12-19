@@ -106,22 +106,129 @@ namespace RiskSimConsoleClient.RiskSimulators {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="AttackResult", Namespace="http://schemas.datacontract.org/2004/07/RiskSimLib")]
+    [System.SerializableAttribute()]
+    public partial class AttackResult : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Collections.Generic.Dictionary<short, double> AllOutcomeChancesField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private RiskSimConsoleClient.RiskSimulators.ArmyComposition AttackingArmyField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private RiskSimConsoleClient.RiskSimulators.ArmyComposition DefendingArmyField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double SuccessChanceField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private uint TrialsField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Collections.Generic.Dictionary<short, double> AllOutcomeChances {
+            get {
+                return this.AllOutcomeChancesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.AllOutcomeChancesField, value) != true)) {
+                    this.AllOutcomeChancesField = value;
+                    this.RaisePropertyChanged("AllOutcomeChances");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public RiskSimConsoleClient.RiskSimulators.ArmyComposition AttackingArmy {
+            get {
+                return this.AttackingArmyField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.AttackingArmyField, value) != true)) {
+                    this.AttackingArmyField = value;
+                    this.RaisePropertyChanged("AttackingArmy");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public RiskSimConsoleClient.RiskSimulators.ArmyComposition DefendingArmy {
+            get {
+                return this.DefendingArmyField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DefendingArmyField, value) != true)) {
+                    this.DefendingArmyField = value;
+                    this.RaisePropertyChanged("DefendingArmy");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double SuccessChance {
+            get {
+                return this.SuccessChanceField;
+            }
+            set {
+                if ((this.SuccessChanceField.Equals(value) != true)) {
+                    this.SuccessChanceField = value;
+                    this.RaisePropertyChanged("SuccessChance");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public uint Trials {
+            get {
+                return this.TrialsField;
+            }
+            set {
+                if ((this.TrialsField.Equals(value) != true)) {
+                    this.TrialsField = value;
+                    this.RaisePropertyChanged("Trials");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(Namespace="http://Microsoft.ServiceModel.Samples", ConfigurationName="RiskSimulators.IRiskSimulator")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="RiskSimulators.IRiskSimulator")]
     public interface IRiskSimulator {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://Microsoft.ServiceModel.Samples/IRiskSimulator/EstimateSuccessChance", ReplyAction="http://Microsoft.ServiceModel.Samples/IRiskSimulator/EstimateSuccessChanceRespons" +
-            "e")]
-        double EstimateSuccessChance(RiskSimConsoleClient.RiskSimulators.ArmyComposition attackingForce, RiskSimConsoleClient.RiskSimulators.ArmyComposition defendingForce);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRiskSimulator/SimulateAttack", ReplyAction="http://tempuri.org/IRiskSimulator/SimulateAttackResponse")]
+        RiskSimConsoleClient.RiskSimulators.AttackResult SimulateAttack(RiskSimConsoleClient.RiskSimulators.ArmyComposition attackingForce, RiskSimConsoleClient.RiskSimulators.ArmyComposition defendingForce, uint trials);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://Microsoft.ServiceModel.Samples/IRiskSimulator/EstimateSuccessChance", ReplyAction="http://Microsoft.ServiceModel.Samples/IRiskSimulator/EstimateSuccessChanceRespons" +
-            "e")]
-        System.Threading.Tasks.Task<double> EstimateSuccessChanceAsync(RiskSimConsoleClient.RiskSimulators.ArmyComposition attackingForce, RiskSimConsoleClient.RiskSimulators.ArmyComposition defendingForce);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRiskSimulator/SimulateAttack", ReplyAction="http://tempuri.org/IRiskSimulator/SimulateAttackResponse")]
+        System.Threading.Tasks.Task<RiskSimConsoleClient.RiskSimulators.AttackResult> SimulateAttackAsync(RiskSimConsoleClient.RiskSimulators.ArmyComposition attackingForce, RiskSimConsoleClient.RiskSimulators.ArmyComposition defendingForce, uint trials);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://Microsoft.ServiceModel.Samples/IRiskSimulator/GetServiceName", ReplyAction="http://Microsoft.ServiceModel.Samples/IRiskSimulator/GetServiceNameResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRiskSimulator/GetServiceName", ReplyAction="http://tempuri.org/IRiskSimulator/GetServiceNameResponse")]
         string GetServiceName();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://Microsoft.ServiceModel.Samples/IRiskSimulator/GetServiceName", ReplyAction="http://Microsoft.ServiceModel.Samples/IRiskSimulator/GetServiceNameResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRiskSimulator/GetServiceName", ReplyAction="http://tempuri.org/IRiskSimulator/GetServiceNameResponse")]
         System.Threading.Tasks.Task<string> GetServiceNameAsync();
     }
     
@@ -152,12 +259,12 @@ namespace RiskSimConsoleClient.RiskSimulators {
                 base(binding, remoteAddress) {
         }
         
-        public double EstimateSuccessChance(RiskSimConsoleClient.RiskSimulators.ArmyComposition attackingForce, RiskSimConsoleClient.RiskSimulators.ArmyComposition defendingForce) {
-            return base.Channel.EstimateSuccessChance(attackingForce, defendingForce);
+        public RiskSimConsoleClient.RiskSimulators.AttackResult SimulateAttack(RiskSimConsoleClient.RiskSimulators.ArmyComposition attackingForce, RiskSimConsoleClient.RiskSimulators.ArmyComposition defendingForce, uint trials) {
+            return base.Channel.SimulateAttack(attackingForce, defendingForce, trials);
         }
         
-        public System.Threading.Tasks.Task<double> EstimateSuccessChanceAsync(RiskSimConsoleClient.RiskSimulators.ArmyComposition attackingForce, RiskSimConsoleClient.RiskSimulators.ArmyComposition defendingForce) {
-            return base.Channel.EstimateSuccessChanceAsync(attackingForce, defendingForce);
+        public System.Threading.Tasks.Task<RiskSimConsoleClient.RiskSimulators.AttackResult> SimulateAttackAsync(RiskSimConsoleClient.RiskSimulators.ArmyComposition attackingForce, RiskSimConsoleClient.RiskSimulators.ArmyComposition defendingForce, uint trials) {
+            return base.Channel.SimulateAttackAsync(attackingForce, defendingForce, trials);
         }
         
         public string GetServiceName() {
@@ -166,95 +273,6 @@ namespace RiskSimConsoleClient.RiskSimulators {
         
         public System.Threading.Tasks.Task<string> GetServiceNameAsync() {
             return base.Channel.GetServiceNameAsync();
-        }
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(Namespace="http://Microsoft.ServiceModel.Samples", ConfigurationName="RiskSimulators.ICalculator")]
-    public interface ICalculator {
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://Microsoft.ServiceModel.Samples/ICalculator/Add", ReplyAction="http://Microsoft.ServiceModel.Samples/ICalculator/AddResponse")]
-        double Add(double n1, double n2);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://Microsoft.ServiceModel.Samples/ICalculator/Add", ReplyAction="http://Microsoft.ServiceModel.Samples/ICalculator/AddResponse")]
-        System.Threading.Tasks.Task<double> AddAsync(double n1, double n2);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://Microsoft.ServiceModel.Samples/ICalculator/Subtract", ReplyAction="http://Microsoft.ServiceModel.Samples/ICalculator/SubtractResponse")]
-        double Subtract(double n1, double n2);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://Microsoft.ServiceModel.Samples/ICalculator/Subtract", ReplyAction="http://Microsoft.ServiceModel.Samples/ICalculator/SubtractResponse")]
-        System.Threading.Tasks.Task<double> SubtractAsync(double n1, double n2);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://Microsoft.ServiceModel.Samples/ICalculator/Multiply", ReplyAction="http://Microsoft.ServiceModel.Samples/ICalculator/MultiplyResponse")]
-        double Multiply(double n1, double n2);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://Microsoft.ServiceModel.Samples/ICalculator/Multiply", ReplyAction="http://Microsoft.ServiceModel.Samples/ICalculator/MultiplyResponse")]
-        System.Threading.Tasks.Task<double> MultiplyAsync(double n1, double n2);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://Microsoft.ServiceModel.Samples/ICalculator/Divide", ReplyAction="http://Microsoft.ServiceModel.Samples/ICalculator/DivideResponse")]
-        double Divide(double n1, double n2);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://Microsoft.ServiceModel.Samples/ICalculator/Divide", ReplyAction="http://Microsoft.ServiceModel.Samples/ICalculator/DivideResponse")]
-        System.Threading.Tasks.Task<double> DivideAsync(double n1, double n2);
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface ICalculatorChannel : RiskSimConsoleClient.RiskSimulators.ICalculator, System.ServiceModel.IClientChannel {
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class CalculatorClient : System.ServiceModel.ClientBase<RiskSimConsoleClient.RiskSimulators.ICalculator>, RiskSimConsoleClient.RiskSimulators.ICalculator {
-        
-        public CalculatorClient() {
-        }
-        
-        public CalculatorClient(string endpointConfigurationName) : 
-                base(endpointConfigurationName) {
-        }
-        
-        public CalculatorClient(string endpointConfigurationName, string remoteAddress) : 
-                base(endpointConfigurationName, remoteAddress) {
-        }
-        
-        public CalculatorClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
-                base(endpointConfigurationName, remoteAddress) {
-        }
-        
-        public CalculatorClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
-                base(binding, remoteAddress) {
-        }
-        
-        public double Add(double n1, double n2) {
-            return base.Channel.Add(n1, n2);
-        }
-        
-        public System.Threading.Tasks.Task<double> AddAsync(double n1, double n2) {
-            return base.Channel.AddAsync(n1, n2);
-        }
-        
-        public double Subtract(double n1, double n2) {
-            return base.Channel.Subtract(n1, n2);
-        }
-        
-        public System.Threading.Tasks.Task<double> SubtractAsync(double n1, double n2) {
-            return base.Channel.SubtractAsync(n1, n2);
-        }
-        
-        public double Multiply(double n1, double n2) {
-            return base.Channel.Multiply(n1, n2);
-        }
-        
-        public System.Threading.Tasks.Task<double> MultiplyAsync(double n1, double n2) {
-            return base.Channel.MultiplyAsync(n1, n2);
-        }
-        
-        public double Divide(double n1, double n2) {
-            return base.Channel.Divide(n1, n2);
-        }
-        
-        public System.Threading.Tasks.Task<double> DivideAsync(double n1, double n2) {
-            return base.Channel.DivideAsync(n1, n2);
         }
     }
 }

@@ -12,13 +12,31 @@ namespace RiskSimConsoleClient
         static void Main(string[] args)
         {
             var riskClient = new RiskSimulatorClient();
-            using (var calcClient = new CalculatorClient())
-            {
-                Console.WriteLine(riskClient.EstimateSuccessChance(new ArmyComposition() { Size = 10 }, new ArmyComposition() { Size = 10 }));
 
-                Console.WriteLine($"5 x 11 == {calcClient.Multiply(5, 11)}");
+            try
+            {
+                var quit = false;
+
+                while (!quit)
+                {
+                    ArmyComposition atk = new ArmyComposition();
+                    ArmyComposition def = new ArmyComposition();
+                    Console.Write("Number of attackers:\t");
+                    atk.Size = short.Parse(Console.ReadLine());
+                    Console.Write("Number of defenders:\t");
+                    def.Size = short.Parse(Console.ReadLine());
+                    Console.Write("Success chance:     \t");
+                    var result = riskClient.SimulateAttack(atk, def, 10000);
+                    Console.WriteLine(result.SuccessChance.ToString("P2"));
+                    Console.WriteLine();
+                }
+                riskClient.Close();
             }
-            riskClient.Close();
+            catch(Exception ex)
+            {
+                Console.WriteLine("Caught unexpected exception: " + ex.ToString());
+                riskClient.Abort();
+            }
         }
     }
 }
