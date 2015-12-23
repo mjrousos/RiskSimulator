@@ -47,7 +47,15 @@
       "npm install",
       "bower install",
       "gulp clean",
-      "gulp min"
+      "gulp deploy"
+    ],
+    "prebuild":[
+      "gulp clean",
+      "gulp deploy"      
+    ],
+    "prerestore": [
+      "npm install",
+      "bower install"
     ]
   }
 }
