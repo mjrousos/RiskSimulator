@@ -1,26 +1,31 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Runtime.Serialization;
 using System.Text;
 
-namespace RiskSimFrontEnd.Models
+namespace RiskSim.Models
 {
     // TODO : Make RiskSimLib a PCL and use this type from there
     [DataContract]
     public class ArmyComposition
     {
         [DataMember]
+        [Display(Name = "Army Size")]
         public short Size { get; set; }
 
         [DataMember]
+        [Display(Name = "+/- to Highest Die")]
         public sbyte HighestModifier { get; set; }
 
         [DataMember]
+        [Display(Name = "+/- to Lowest Die")]
         public sbyte LowestModifier { get; set; }
 
         [DataMember]
+        [Display(Name = "+/- to All Dice")]
         public sbyte AllModifier { get; set; }
 
         public override string ToString()

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Mvc;
+using RiskSim.Models;
 
 namespace RiskSimFrontEnd.Controllers
 {
@@ -10,7 +11,7 @@ namespace RiskSimFrontEnd.Controllers
     {
         public IActionResult Index()
         {
-            return View();
+            return View(new AttackResult());
         }
 
         public IActionResult About()

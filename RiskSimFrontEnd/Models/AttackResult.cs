@@ -4,12 +4,18 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Runtime.Serialization;
 
-namespace RiskSimFrontEnd.Models
+namespace RiskSim.Models
 {
     // TODO : Make RiskSimLib a PCL and use this type from there
     [DataContract]
     public class AttackResult
     {
+        public AttackResult()
+        {
+            AttackingArmy = new ArmyComposition();
+            DefendingArmy = new ArmyComposition();  
+        }
+
         [DataMember]
         public ArmyComposition AttackingArmy { get; set; }
 
