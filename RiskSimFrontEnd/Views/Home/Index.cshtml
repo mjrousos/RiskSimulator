@@ -1,22 +1,119 @@
-@model RiskSimLib.Models.AttackResult // Use AttackResult as a DTO since it contains to army comps
+@model RiskSim.Models.AttackResult
 
 <div class="jumbotron">
     <h1>Risk Combat Simulator</h1>
     <p>Attack with confidence</p>
 </div>
-@using (Html.BeginForm())
+@using (Html.BeginForm(FormMethod.Post, htmlAttributes: new { @class = "form-horizontal" }))
 {
     @Html.AntiForgeryToken()
     <div class="row">
         <div class="col-md-6">
             <h2>Attacking Army</h2>
-            @Html.LabelFor(model => model.AttackingArmy.Size, htmlAttributes: new { @class = "control-label col-md-2" })
-            @Html.EditorFor(model => model.AttackingArmy.Size, new { htmlAttributes = new { @class = "form-control" } })
+            <div id="requiredAttackingInputs" class="row">
+                <div class="form-group">
+                    <div class="col-xs-4 col-xs-offset-2">
+                        @Html.LabelFor(model => model.AttackingArmy.Size, htmlAttributes: new { @class = "control-label" })
+                    </div>
+                    <div class="col-xs-2">
+                        @Html.EditorFor(model => model.AttackingArmy.Size, new { htmlAttributes = new { @class = "form-control" } })
+                    </div>
+                </div>
+            </div>
+            <h4 class="col-xs-offset-1">
+                Optional Inputs
+                <i class="glyphicon glyphicon-plus clickable" id="attackingOptionsExpand"></i>
+            </h4>
+            <div id="optionalAttackingInputs" class="row" style="display:none">
+                <div class="form-group">
+                    <div class="col-xs-4 col-xs-offset-2">
+                        @Html.LabelFor(model => model.AttackingArmy.HighestModifier, htmlAttributes: new { @class = "control-label" })
+                    </div>
+                    <div class="col-xs-2">
+                        @Html.EditorFor(model => model.AttackingArmy.HighestModifier, new { htmlAttributes = new { @class = "form-control" } })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-xs-4 col-xs-offset-2">
+                        @Html.LabelFor(model => model.AttackingArmy.LowestModifier, htmlAttributes: new { @class = "control-label" })
+                    </div>
+                    <div class="col-xs-2">
+                        @Html.EditorFor(model => model.AttackingArmy.LowestModifier, new { htmlAttributes = new { @class = "form-control" } })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-xs-4 col-xs-offset-2">
+                        @Html.LabelFor(model => model.AttackingArmy.AllModifier, htmlAttributes: new { @class = "control-label" })
+                    </div>
+                    <div class="col-xs-2">
+                        @Html.EditorFor(model => model.AttackingArmy.AllModifier, new { htmlAttributes = new { @class = "form-control" } })
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="col-md-6">
             <h2>Defending Army</h2>
-            @Html.LabelFor(model => model.DefendingArmy.Size, htmlAttributes: new { @class = "control-label col-md-2" })
-            @Html.EditorFor(model => model.DefendingArmy.Size, new { htmlAttributes = new { @class = "form-control" } })
+            <div id="requiredDefendingInputs" class="row">
+                <div class="form-group">
+                    <div class="col-xs-4 col-xs-offset-2">
+                        @Html.LabelFor(model => model.DefendingArmy.Size, htmlAttributes: new { @class = "control-label" })
+                    </div>
+                    <div class="col-xs-2">
+                        @Html.EditorFor(model => model.DefendingArmy.Size, new { htmlAttributes = new { @class = "form-control" } })
+                    </div>
+                </div>
+            </div>
+            <h4 class="col-xs-offset-1">
+                Optional Inputs
+                <i id="defendingOptionsExpand" class="glyphicon glyphicon-plus clickable"></i>
+            </h4>
+            <div id="optionalDefendingInputs" class="row" style="display:none">
+                <div class="form-group">
+                    <div class="col-xs-4 col-xs-offset-2">
+                        @Html.LabelFor(model => model.DefendingArmy.HighestModifier, htmlAttributes: new { @class = "control-label" })
+                    </div>
+                    <div class="col-xs-2">
+                        @Html.EditorFor(model => model.DefendingArmy.HighestModifier, new { htmlAttributes = new { @class = "form-control" } })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-xs-4 col-xs-offset-2">
+                        @Html.LabelFor(model => model.DefendingArmy.LowestModifier, htmlAttributes: new { @class = "control-label" })
+                    </div>
+                    <div class="col-xs-2">
+                        @Html.EditorFor(model => model.DefendingArmy.LowestModifier, new { htmlAttributes = new { @class = "form-control" } })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-xs-4 col-xs-offset-2">
+                        @Html.LabelFor(model => model.DefendingArmy.AllModifier, htmlAttributes: new { @class = "control-label" })
+                    </div>
+                    <div class="col-xs-2">
+                        @Html.EditorFor(model => model.DefendingArmy.AllModifier, new { htmlAttributes = new { @class = "form-control" } })
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+    <div class="row">
+        <button type="button" id="simulateButton" class="btn btn-default">Simulate</button>
+    </div>
+    <div id="results" class="row" style="display: none">
+        <h2>Results</h2>
+        <div id="resultsSummary" class="col-md-6">
+            <h1 class="text-center">51% chance of victory</h1>
+        </div>
+        <div id="outcomeHistogram" class="col-md-6">
+        </div>
+    </div>
+}
+
+@section scripts
+{
+    <script>
+        $(document).ready(function()
+        {
+            initializeHomeIndex();
+        });
+    </script>
 }
