@@ -47,7 +47,7 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Service References\RiskSimulators\Reference.cs">
+    <Compile Include="Service References\RiskSimulatorService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -55,40 +55,40 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="Service References\RiskSimulators\RiskSimConsoleClient.RiskSimulators.AttackResult.datasource">
+    <None Include="Service References\RiskSimulatorService\RiskSimConsoleClient.RiskSimulatorService.AttackResult.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\RiskSimulators\RiskSimulatorService.wsdl" />
-    <None Include="Service References\RiskSimulators\Simulators.xsd">
+    <None Include="Service References\RiskSimulatorService\RiskSimulator.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\RiskSimulators\Simulators1.xsd">
+    <None Include="Service References\RiskSimulatorService\RiskSimulator1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\RiskSimulators\Simulators2.xsd">
+    <None Include="Service References\RiskSimulatorService\RiskSimulator2.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\RiskSimulators\Simulators3.xsd">
+    <None Include="Service References\RiskSimulatorService\RiskSimulator3.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Service References\RiskSimulatorService\RiskSimulatorService.wsdl" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadataStorage Include="Service References\RiskSimulators\" />
+    <WCFMetadataStorage Include="Service References\RiskSimulatorService\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\RiskSimulators\Simulators.disco" />
+    <None Include="Service References\RiskSimulatorService\RiskSimulator.disco" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\RiskSimulators\configuration91.svcinfo" />
+    <None Include="Service References\RiskSimulatorService\configuration91.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\RiskSimulators\configuration.svcinfo" />
+    <None Include="Service References\RiskSimulatorService\configuration.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\RiskSimulators\Reference.svcmap">
+    <None Include="Service References\RiskSimulatorService\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>

@@ -4,11 +4,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
+using System.ServiceModel.Activation;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace RiskSimLib
 {
+    [AspNetCompatibilityRequirements(RequirementsMode = AspNetCompatibilityRequirementsMode.Allowed)]
     public class RiskSimulatorService : IRiskSimulator //, ICalculator
     {
         private Random numGen = new Random();

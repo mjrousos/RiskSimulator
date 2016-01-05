@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace RiskSimConsoleClient.RiskSimulators {
+namespace RiskSimConsoleClient.RiskSimulatorService {
     using System.Runtime.Serialization;
     using System;
     
@@ -119,10 +119,10 @@ namespace RiskSimConsoleClient.RiskSimulators {
         private System.Collections.Generic.Dictionary<short, double> AllOutcomeChancesField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private RiskSimConsoleClient.RiskSimulators.ArmyComposition AttackingArmyField;
+        private RiskSimConsoleClient.RiskSimulatorService.ArmyComposition AttackingArmyField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private RiskSimConsoleClient.RiskSimulators.ArmyComposition DefendingArmyField;
+        private RiskSimConsoleClient.RiskSimulatorService.ArmyComposition DefendingArmyField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private double SuccessChanceField;
@@ -154,7 +154,7 @@ namespace RiskSimConsoleClient.RiskSimulators {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public RiskSimConsoleClient.RiskSimulators.ArmyComposition AttackingArmy {
+        public RiskSimConsoleClient.RiskSimulatorService.ArmyComposition AttackingArmy {
             get {
                 return this.AttackingArmyField;
             }
@@ -167,7 +167,7 @@ namespace RiskSimConsoleClient.RiskSimulators {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public RiskSimConsoleClient.RiskSimulators.ArmyComposition DefendingArmy {
+        public RiskSimConsoleClient.RiskSimulatorService.ArmyComposition DefendingArmy {
             get {
                 return this.DefendingArmyField;
             }
@@ -216,14 +216,14 @@ namespace RiskSimConsoleClient.RiskSimulators {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="RiskSimulators.IRiskSimulator")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="RiskSimulatorService.IRiskSimulator")]
     public interface IRiskSimulator {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRiskSimulator/SimulateAttack", ReplyAction="http://tempuri.org/IRiskSimulator/SimulateAttackResponse")]
-        RiskSimConsoleClient.RiskSimulators.AttackResult SimulateAttack(RiskSimConsoleClient.RiskSimulators.ArmyComposition attackingForce, RiskSimConsoleClient.RiskSimulators.ArmyComposition defendingForce, uint trials);
+        RiskSimConsoleClient.RiskSimulatorService.AttackResult SimulateAttack(RiskSimConsoleClient.RiskSimulatorService.ArmyComposition attackingForce, RiskSimConsoleClient.RiskSimulatorService.ArmyComposition defendingForce, uint trials);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRiskSimulator/SimulateAttack", ReplyAction="http://tempuri.org/IRiskSimulator/SimulateAttackResponse")]
-        System.Threading.Tasks.Task<RiskSimConsoleClient.RiskSimulators.AttackResult> SimulateAttackAsync(RiskSimConsoleClient.RiskSimulators.ArmyComposition attackingForce, RiskSimConsoleClient.RiskSimulators.ArmyComposition defendingForce, uint trials);
+        System.Threading.Tasks.Task<RiskSimConsoleClient.RiskSimulatorService.AttackResult> SimulateAttackAsync(RiskSimConsoleClient.RiskSimulatorService.ArmyComposition attackingForce, RiskSimConsoleClient.RiskSimulatorService.ArmyComposition defendingForce, uint trials);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRiskSimulator/GetServiceName", ReplyAction="http://tempuri.org/IRiskSimulator/GetServiceNameResponse")]
         string GetServiceName();
@@ -233,12 +233,12 @@ namespace RiskSimConsoleClient.RiskSimulators {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IRiskSimulatorChannel : RiskSimConsoleClient.RiskSimulators.IRiskSimulator, System.ServiceModel.IClientChannel {
+    public interface IRiskSimulatorChannel : RiskSimConsoleClient.RiskSimulatorService.IRiskSimulator, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class RiskSimulatorClient : System.ServiceModel.ClientBase<RiskSimConsoleClient.RiskSimulators.IRiskSimulator>, RiskSimConsoleClient.RiskSimulators.IRiskSimulator {
+    public partial class RiskSimulatorClient : System.ServiceModel.ClientBase<RiskSimConsoleClient.RiskSimulatorService.IRiskSimulator>, RiskSimConsoleClient.RiskSimulatorService.IRiskSimulator {
         
         public RiskSimulatorClient() {
         }
@@ -259,11 +259,11 @@ namespace RiskSimConsoleClient.RiskSimulators {
                 base(binding, remoteAddress) {
         }
         
-        public RiskSimConsoleClient.RiskSimulators.AttackResult SimulateAttack(RiskSimConsoleClient.RiskSimulators.ArmyComposition attackingForce, RiskSimConsoleClient.RiskSimulators.ArmyComposition defendingForce, uint trials) {
+        public RiskSimConsoleClient.RiskSimulatorService.AttackResult SimulateAttack(RiskSimConsoleClient.RiskSimulatorService.ArmyComposition attackingForce, RiskSimConsoleClient.RiskSimulatorService.ArmyComposition defendingForce, uint trials) {
             return base.Channel.SimulateAttack(attackingForce, defendingForce, trials);
         }
         
-        public System.Threading.Tasks.Task<RiskSimConsoleClient.RiskSimulators.AttackResult> SimulateAttackAsync(RiskSimConsoleClient.RiskSimulators.ArmyComposition attackingForce, RiskSimConsoleClient.RiskSimulators.ArmyComposition defendingForce, uint trials) {
+        public System.Threading.Tasks.Task<RiskSimConsoleClient.RiskSimulatorService.AttackResult> SimulateAttackAsync(RiskSimConsoleClient.RiskSimulatorService.ArmyComposition attackingForce, RiskSimConsoleClient.RiskSimulatorService.ArmyComposition defendingForce, uint trials) {
             return base.Channel.SimulateAttackAsync(attackingForce, defendingForce, trials);
         }
         

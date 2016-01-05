@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="fa17a430-afd6-4940-bbe1-72d3bf9725b2" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://risksimservice.azurewebsites.net/RiskSimulator.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="RiskSimulator.xsd" MetadataType="Schema" ID="ecea5551-8860-4fc3-aa74-6da2acf90f89" SourceId="1" SourceUrl="http://risksimservice.azurewebsites.net/RiskSimulator.svc?xsd=xsd0" />
+    <MetadataFile FileName="RiskSimulator1.xsd" MetadataType="Schema" ID="d11de4ca-35aa-46f1-92f6-3d8f37d61766" SourceId="1" SourceUrl="http://risksimservice.azurewebsites.net/RiskSimulator.svc?xsd=xsd1" />
+    <MetadataFile FileName="RiskSimulator2.xsd" MetadataType="Schema" ID="ff45c8bb-54fb-477a-a797-1899fd0db373" SourceId="1" SourceUrl="http://risksimservice.azurewebsites.net/RiskSimulator.svc?xsd=xsd2" />
+    <MetadataFile FileName="RiskSimulator3.xsd" MetadataType="Schema" ID="1b5f5c23-194b-483e-9190-2773f9d93f13" SourceId="1" SourceUrl="http://risksimservice.azurewebsites.net/RiskSimulator.svc?xsd=xsd3" />
+    <MetadataFile FileName="RiskSimulatorService.wsdl" MetadataType="Wsdl" ID="8c02646c-096f-4200-8cbf-972685b54bee" SourceId="1" SourceUrl="http://risksimservice.azurewebsites.net/RiskSimulator.svc?wsdl" />
+    <MetadataFile FileName="RiskSimulator.disco" MetadataType="Disco" ID="2ce67c9e-a323-4bcc-a6bc-1daae978eee0" SourceId="1" SourceUrl="http://risksimservice.azurewebsites.net/RiskSimulator.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

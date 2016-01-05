@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RiskSimConsoleClient", "Ris
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "RiskSimFrontEnd", "RiskSimFrontEnd\RiskSimFrontEnd.xproj", "{FA465365-184E-4D00-AC55-4B392956D5CA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RiskSimWebHost", "RiskSimWebHost\RiskSimWebHost.csproj", "{771FB9FA-1C15-4BF4-9469-D1D2656350E6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{FA465365-184E-4D00-AC55-4B392956D5CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FA465365-184E-4D00-AC55-4B392956D5CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FA465365-184E-4D00-AC55-4B392956D5CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{771FB9FA-1C15-4BF4-9469-D1D2656350E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{771FB9FA-1C15-4BF4-9469-D1D2656350E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{771FB9FA-1C15-4BF4-9469-D1D2656350E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{771FB9FA-1C15-4BF4-9469-D1D2656350E6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
