@@ -24,10 +24,27 @@ function simulate()
     // Disable the simulate button until this sim is done
     $("#simulateButton").attr("disabled", true).html("Simulating...");
 
-    // TODO : Get chart data via an API
-    var data = {};
-    data.SuccessChance = 0.63131784;
-    data.ChartData = {
+    $.ajax({
+        url: "Data/SimulateAttack",
+        data: $("form").serialize(),
+        type: "GET",
+        success: PopulateResults,
+        error: function (jqXHR, textStatus, errorThrown) {
+            // Re-enable the simulate button when the sim is done
+            $("#simulateButton").attr("disabled", false).html("Simulate");
+            $("#results").show();
+
+            alert("ERROR: " + textStatus + " " + errorThrown);
+        }
+    });
+}
+
+function PopulateResults(data)
+{
+    //// TODO : Get chart data via an API
+    var data2 = {};
+    data2.SuccessChance = 0.63131784;
+    data2.ChartData = {
         labels: ["-1", "+1", "+2", "+3", "+4"],
         datasets: [
             {
@@ -39,7 +56,7 @@ function simulate()
             }
         ]
     };
-    data.options = {
+    data2.options = {
         animation: true,
         scaleOverride: true,
         scaleStartValue: 0,
@@ -62,6 +79,13 @@ function simulate()
             outcomeChart.datasets[0].bars[i].strokeColor = "rgba(210, 120, 120, 0.9)";
             outcomeChart.datasets[0].bars[i].highlightFill = "rgba(210, 120, 120, 0.9)";
             outcomeChart.datasets[0].bars[i].highlightStroke = "rgba(210, 120, 120, 1)";
+        }
+        else
+        {
+            outcomeChart.datasets[0].bars[i].fillColor = "rgba(120, 210, 120, 0.7)";
+            outcomeChart.datasets[0].bars[i].strokeColor = "rgba(120, 210, 120, 0.9)";
+            outcomeChart.datasets[0].bars[i].highlightFill = "rgba(120, 210, 120, 0.9)";
+            outcomeChart.datasets[0].bars[i].highlightStroke = "rgba(120, 210, 120, 1)";
         }
     };
 
