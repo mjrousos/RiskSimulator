@@ -16,6 +16,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{074E848B-D6C5-4AE5-ACE0-6127B7869B32}"
 	ProjectSection(SolutionItems) = preProject
 		RiskSimFrontEnd\global.json = RiskSimFrontEnd\global.json
+		NuGet.config = NuGet.config
 	EndProjectSection
 EndProject
 Global

@@ -27,7 +27,7 @@ function simulate()
     $.ajax({
         url: "Data/SimulateAttack",
         data: $("form").serialize(),
-        type: "GET",
+        type: "POST",
         success: PopulateResults,
         error: function (jqXHR, textStatus, errorThrown) {
             // Re-enable the simulate button when the sim is done

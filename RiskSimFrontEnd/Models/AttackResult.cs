@@ -50,7 +50,7 @@ namespace RiskSim.Models
 
                 var greatestChance = AllOutcomeChances.Max(kvp => kvp.Value);
                 var mostLikelyOutcome = AllOutcomeChances.Where(kvp => kvp.Value == greatestChance).FirstOrDefault().Key;
-                return AllOutcomeChances.Where(kvp => Math.Abs(kvp.Key - mostLikelyOutcome) <= 3)
+                return AllOutcomeChances.Where(kvp => Math.Abs(kvp.Key - mostLikelyOutcome) <= 4)
                                         .OrderBy(kvp => kvp.Key)
                                         .ToDictionary(kvp => kvp.Key, kvp => kvp.Value);
             }

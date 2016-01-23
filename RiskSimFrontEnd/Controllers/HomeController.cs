@@ -7,13 +7,16 @@ using RiskSim.Models;
 
 namespace RiskSimFrontEnd.Controllers
 {
+    [Route("[controller]/[action]")]
     public class HomeController : Controller
     {
+        [HttpGet]
         public IActionResult Index()
         {
             return View(new AttackResult());
         }
 
+        [HttpGet]
         public IActionResult About()
         {
             ViewData["Message"] = "Your application description page.";
@@ -21,6 +24,7 @@ namespace RiskSimFrontEnd.Controllers
             return View();
         }
 
+        [HttpGet]
         public IActionResult Contact()
         {
             ViewData["Message"] = "Your contact page.";
@@ -28,6 +32,7 @@ namespace RiskSimFrontEnd.Controllers
             return View();
         }
 
+        [HttpGet]
         public IActionResult Error()
         {
             return View();

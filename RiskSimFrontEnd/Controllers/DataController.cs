@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Mvc;
@@ -9,12 +8,14 @@ using System.Net;
 
 namespace RiskSimFrontEnd.Controllers
 {
+    [Route("[controller]/[action]")]
     public class DataController : Controller
     {
         const int Trials = 10000;
 
         // GET: /Data/SimulateAttack
-        public async Task<IActionResult> SimulateAttack(AttackResult armyCompositions)
+        [HttpPost]
+        public async Task<IActionResult> SimulateAttack([FromBody] AttackResult armyCompositions)
         {
             RiskSimulatorClient client = null;
             AttackResult result = null;

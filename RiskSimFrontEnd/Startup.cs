@@ -9,6 +9,7 @@ using Microsoft.AspNet.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Swashbuckle.SwaggerGen.Generator;
 
 namespace RiskSimFrontEnd
 {
@@ -30,6 +31,15 @@ namespace RiskSimFrontEnd
         {
             // Add framework services.
             services.AddMvc();
+
+            services.AddSwaggerGen(c =>
+            {
+                c.SingleApiVersion(new Info
+                {
+                    Version = "v1",
+                    Title = "RiskSimulator APIs"
+                });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -51,15 +61,19 @@ namespace RiskSimFrontEnd
 
             app.UseStaticFiles();
 
-            app.UseMvc(routes =>
-            {
-                routes.MapRoute(
-                    name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
-            });
+            //app.UseMvc(routes =>
+            //{
+            //    routes.MapRoute(
+            //        name: "default",
+            //        template: "{controller=Home}/{action=Index}/{id?}");
+            //});
+            app.UseMvc();
+
+            app.UseSwaggerGen();
+            app.UseSwaggerUi();
         }
 
         // Entry point for the application.
-        public static void Main(string[] args) => Microsoft.AspNet.Hosting.WebApplication.Run<Startup>(args);
+        public static void Main(string[] args) => WebApplication.Run<Startup>(args);
     }
 }
