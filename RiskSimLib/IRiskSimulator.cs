@@ -60,6 +60,11 @@ namespace RiskSimLib
     [DataContract]
     public class AttackResult
     {
+        public AttackResult()
+        {
+            AllOutcomeChances = new Dictionary<short, double>();
+        }
+
         [DataMember]
         public ArmyComposition AttackingArmy { get; set; }
 
@@ -73,7 +78,7 @@ namespace RiskSimLib
         public double SuccessChance { get; set; }
 
         [DataMember]
-        public Dictionary<short, double> AllOutcomeChances { get; } = new Dictionary<short, double>();
+        public Dictionary<short, double> AllOutcomeChances { get; }
 
         [IgnoreDataMember]
         public IDictionary<short, double> LikelyOutcomeChances

@@ -7,13 +7,20 @@ using System.Runtime.Serialization;
 namespace RiskSim.Models
 {
     // TODO : Make RiskSimLib a PCL and use this type from there
-    [DataContract]
+    [DataContract(Name = "AttackResult", Namespace = "http://schemas.datacontract.org/2004/07/RiskSimLib")]
     public class AttackResult
     {
         public AttackResult()
         {
             AttackingArmy = new ArmyComposition();
             DefendingArmy = new ArmyComposition();  
+            AllOutcomeChances = new Dictionary<short, double>();
+        }
+
+        [OnDeserializing]
+        void OnDeserializing(StreamingContext context)
+        {
+            AllOutcomeChances = new Dictionary<short, double>();
         }
 
         [DataMember]
@@ -29,13 +36,18 @@ namespace RiskSim.Models
         public double SuccessChance { get; set; }
 
         [DataMember]
-        public Dictionary<short, double> AllOutcomeChances { get; } = new Dictionary<short, double>();
+        public Dictionary<short, double> AllOutcomeChances { get; set; } 
 
         [IgnoreDataMember]
         public IDictionary<short, double> LikelyOutcomeChances
         {
             get
             {
+                if (AllOutcomeChances.Count < 1)
+                {
+                    return new Dictionary<short, double>();
+                }
+
                 var greatestChance = AllOutcomeChances.Max(kvp => kvp.Value);
                 var mostLikelyOutcome = AllOutcomeChances.Where(kvp => kvp.Value == greatestChance).FirstOrDefault().Key;
                 return AllOutcomeChances.Where(kvp => Math.Abs(kvp.Key - mostLikelyOutcome) <= 3)

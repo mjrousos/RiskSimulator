@@ -9,7 +9,7 @@ using System.Text;
 namespace RiskSim.Models
 {
     // TODO : Make RiskSimLib a PCL and use this type from there
-    [DataContract]
+    [DataContract(Name = "ArmyComposition", Namespace = "http://schemas.datacontract.org/2004/07/RiskSimLib")]
     public class ArmyComposition
     {
         [DataMember]
