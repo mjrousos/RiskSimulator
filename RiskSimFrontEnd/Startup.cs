@@ -61,6 +61,7 @@ namespace RiskSimFrontEnd
 
             app.UseStaticFiles();
 
+            // TODO - This style of routing doesn't seem to work with swashbuckle. Only [route] attributes do.
             //app.UseMvc(routes =>
             //{
             //    routes.MapRoute(
