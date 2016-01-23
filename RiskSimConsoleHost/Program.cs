@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.ServiceModel;
 using System.ServiceModel.Description;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace RiskSimConsoleHost
 {
@@ -18,7 +14,6 @@ namespace RiskSimConsoleHost
             try
             {
                 host.AddServiceEndpoint(typeof(RiskSimLib.IRiskSimulator), new BasicHttpBinding(), "Risk");
-                // host.AddServiceEndpoint(typeof(RiskSimLib.ICalculator), new WSHttpBinding(), "Calc");
 
                 var smb = new ServiceMetadataBehavior();
                 smb.HttpGetEnabled = true;
