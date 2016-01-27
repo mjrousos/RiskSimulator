@@ -11,7 +11,7 @@ namespace RiskSimFrontEnd.Controllers
     [Route("[controller]/[action]")]
     public class DataController : Controller
     {
-        const int Trials = 10000;
+        const int DefaultTrials = 10000;
 
         // GET: /Data/SimulateAttack
         [HttpPost]
@@ -21,6 +21,8 @@ namespace RiskSimFrontEnd.Controllers
             AttackResult result = null;
             try
             {
+                var Trials = armyCompositions.Trials;
+                if (Trials <= 0) Trials = DefaultTrials;
                 client = new RiskSimulatorClient(RiskSimulatorClient.EndpointConfiguration.BasicHttpBinding_IRiskSimulator);
                 await client.OpenAsync();
                 result = await client.SimulateAttackAsync(armyCompositions.AttackingArmy, armyCompositions.DefendingArmy, Trials);
