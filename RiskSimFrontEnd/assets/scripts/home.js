@@ -70,24 +70,27 @@ function PopulateResults(data)
 
     // Get context with jQuery - using jQuery's .get() method.
     var ctx = $("#outcomeChart").get(0).getContext("2d");
-    // This will get the first returned node in the jQuery collection.
-    var outcomeChart = new Chart(ctx).Bar(data.ChartData, data.options);
+
+    if (window.chart) window.chart.destroy();
+    window.chart = new Chart(ctx).Bar(data.ChartData, data.options);
+
     for (var i = 0; i < data.ChartData.labels.length; i++) {
         if (data.ChartData.labels[i] < 0)
         {
-            outcomeChart.datasets[0].bars[i].fillColor = "rgba(210, 120, 120, 0.7)";
-            outcomeChart.datasets[0].bars[i].strokeColor = "rgba(210, 120, 120, 0.9)";
-            outcomeChart.datasets[0].bars[i].highlightFill = "rgba(210, 120, 120, 0.9)";
-            outcomeChart.datasets[0].bars[i].highlightStroke = "rgba(210, 120, 120, 1)";
+            window.chart.datasets[0].bars[i].fillColor = "rgba(210, 120, 120, 0.7)";
+            window.chart.datasets[0].bars[i].strokeColor = "rgba(210, 120, 120, 0.9)";
+            window.chart.datasets[0].bars[i].highlightFill = "rgba(210, 120, 120, 0.9)";
+            window.chart.datasets[0].bars[i].highlightStroke = "rgba(210, 120, 120, 1)";
         }
         else
         {
-            outcomeChart.datasets[0].bars[i].fillColor = "rgba(120, 210, 120, 0.7)";
-            outcomeChart.datasets[0].bars[i].strokeColor = "rgba(120, 210, 120, 0.9)";
-            outcomeChart.datasets[0].bars[i].highlightFill = "rgba(120, 210, 120, 0.9)";
-            outcomeChart.datasets[0].bars[i].highlightStroke = "rgba(120, 210, 120, 1)";
+            window.chart.datasets[0].bars[i].fillColor = "rgba(120, 210, 120, 0.7)";
+            window.chart.datasets[0].bars[i].strokeColor = "rgba(120, 210, 120, 0.9)";
+            window.chart.datasets[0].bars[i].highlightFill = "rgba(120, 210, 120, 0.9)";
+            window.chart.datasets[0].bars[i].highlightStroke = "rgba(120, 210, 120, 1)";
         }
     };
+    window.chart.update();
 
     // Add summary
     $("#resultsSummary").html((data.SuccessChance * 100).toFixed(2) + "% chance of victory");

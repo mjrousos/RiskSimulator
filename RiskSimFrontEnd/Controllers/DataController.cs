@@ -55,6 +55,7 @@ namespace RiskSimFrontEnd.Controllers
                 },
                 options = new
                 {
+                    responsive = true,
                     animation = true,
                     scaleOverride = true,
                     scaleStartValue= 0,
