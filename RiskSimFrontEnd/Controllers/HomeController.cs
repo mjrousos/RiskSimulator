@@ -7,7 +7,6 @@ using RiskSim.Models;
 
 namespace RiskSimFrontEnd.Controllers
 {
-    [Route("[controller]/[action]")]
     public class HomeController : Controller
     {
         [HttpGet]

@@ -1,9 +1,3 @@
-
-
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNet.Builder;
 using Microsoft.AspNet.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -62,13 +56,13 @@ namespace RiskSimFrontEnd
             app.UseStaticFiles();
 
             // TODO - This style of routing doesn't seem to work with swashbuckle. Only [route] attributes do.
-            //app.UseMvc(routes =>
-            //{
-            //    routes.MapRoute(
-            //        name: "default",
-            //        template: "{controller=Home}/{action=Index}/{id?}");
-            //});
-            app.UseMvc();
+            // Despite the issue, leave this routing so that the HomeController can use it.
+            app.UseMvc(routes =>
+            {
+                routes.MapRoute(
+                    name: "default",
+                    template: "{controller=Home}/{action=Index}/{id?}");
+            });
 
             app.UseSwaggerGen();
             app.UseSwaggerUi();

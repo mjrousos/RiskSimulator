@@ -15,7 +15,7 @@ namespace RiskSimFrontEnd.Controllers
 
         // GET: /Data/SimulateAttack
         [HttpPost]
-        public async Task<IActionResult> SimulateAttack([FromBody] AttackResult armyCompositions)
+        public async Task<IActionResult> SimulateAttack([FromForm] AttackResult armyCompositions)
         {
             RiskSimulatorClient client = null;
             AttackResult result = null;

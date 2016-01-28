@@ -27,6 +27,7 @@ function simulate()
     $.ajax({
         url: "Data/SimulateAttack",
         data: $("form").serialize(),
+        processData: false, // Don't process the data into the query string; use the request body
         type: "POST",
         success: PopulateResults,
         error: function (jqXHR, textStatus, errorThrown) {
