@@ -42,29 +42,6 @@ function simulate()
 
 function PopulateResults(data)
 {
-    //// TODO : Get chart data via an API
-    var data2 = {};
-    data2.SuccessChance = 0.63131784;
-    data2.ChartData = {
-        labels: ["-1", "+1", "+2", "+3", "+4"],
-        datasets: [
-            {
-                fillColor: "rgba(120, 210, 120, 0.7)",
-                strokeColor: "rgba(120, 210, 120, 0.9)",
-                highlightFill: "rgba(120, 210, 120, 0.9)",
-                highlightStroke: "rgba(120, 210, 120, 1)",
-                data: [0.19, 0.21, 0.24, 0.18, 0.1]
-            }
-        ]
-    };
-    data2.options = {
-        animation: true,
-        scaleOverride: true,
-        scaleStartValue: 0,
-        scaleStepWidth: 0.1,
-        scaleSteps: 5
-    };
-
     // Re-enable the simulate button when the sim is done
     $("#simulateButton").attr("disabled", false).html("Simulate");
     $("#results").show();
